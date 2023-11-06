@@ -1,4 +1,4 @@
-const URL = "http://localhost:3000";
+const URL = " https://ecomm000server-7471d1edeae9.herokuapp.com" || "http://localhost:3000";
 
 export default {
   /** mode option deprecated */
