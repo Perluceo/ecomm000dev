@@ -1,4 +1,4 @@
-const URL = process.env.PORT || "http://localhost:3000";
+const URL = "https://ecomm000server-7471d1edeae9.herokuapp.com";
 
 export default {
   /** mode option deprecated */
