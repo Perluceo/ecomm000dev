@@ -110,10 +110,10 @@
 export default {
   async asyncData({ $axios, params }) {
     try {
-      let categories = $axios.$get("http://localhost:3000/api/categories");
-      let owners = $axios.$get("http://localhost:3000/api/owners");
+      let categories = $axios.$get("https://ecomm000server-7471d1edeae9.herokuapp.com/api/categories");
+      let owners = $axios.$get("https://ecomm000server-7471d1edeae9.herokuapp.com/api/owners");
       let product = $axios.$get(
-        `http://localhost:3000/api/products/${params.id}`
+        `https://ecomm000server-7471d1edeae9.herokuapp.com/api/products/${params.id}`
       );
       const [catResponse, ownerResponse, productResponse] = await Promise.all([
         categories,
@@ -158,7 +158,7 @@ export default {
       data.append("categoryID", this.categoryID);
       data.append("photo", this.selectedFile, this.selectedFile.name);
       let result = await this.$axios.$put(
-        `http://localhost:3000/api/products/${this.$route.params.id}`,
+        `https://ecomm000server-7471d1edeae9.herokuapp.com/api/products/${this.$route.params.id}`,
         data
       );
       this.$router.push("/");

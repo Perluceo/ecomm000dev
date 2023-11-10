@@ -97,8 +97,8 @@
 export default {
   async asyncData({ $axios }) {
     try {
-      let categories = $axios.$get("http://localhost:3000/api/categories");
-      let owners = $axios.$get("http://localhost:3000/api/owners");
+      let categories = $axios.$get("https://ecomm000server-7471d1edeae9.herokuapp.com/api/categories");
+      let owners = $axios.$get("https://ecomm000server-7471d1edeae9.herokuapp.com/api/owners");
       const [catResponse, ownerResponse] = await Promise.all([
         categories,
         owners
@@ -140,7 +140,7 @@ export default {
       data.append("categoryID", this.categoryID);
       data.append("photo", this.selectedFile, this.selectedFile.name);
       let result = await this.$axios.$post(
-        "http://localhost:3000/api/products",
+        "https://ecomm000server-7471d1edeae9.herokuapp.com/api/products",
         data
       );
       this.$router.push("/");
